@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Food_Diary.ReferencePage">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#D5D7CC">
+            <Label Text="На 100г продукта" TextColor="#FF9376" FontAttributes="Bold" FontSize="18" Margin="15,0,0,0" Padding="0,2,0,0"/>
+            <CollectionView x:Name="collectionView_ref"
+                SelectionMode="None"
+                Margin="15,0,15,0">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Vertical"
+                           ItemSpacing="5"/>
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text ="{Binding Name}" TextColor="#588982" FontAttributes="Bold" FontSize="18" HorizontalOptions="StartAndExpand"/>
+                                <Label Text="{Binding Calories}" TextColor="#588982" FontAttributes="Bold" FontSize="18" Padding="0,0,0,0"/>
+                            </StackLayout>
+                            <Line HeightRequest="2" BackgroundColor="#FF9376" Margin="0"/>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

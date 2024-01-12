@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Food_Diary.AboutPage">
+    
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#D5D7CC">
+
+            <Label TextColor="#FF9376" Margin="15, 30, 15, 5" FontSize="20" FontAttributes="Bold" HorizontalTextAlignment="Center"
+                Text="Спасибо за использование приложения!"/>
+
+            <Label TextColor="#588982" Margin="18, 10, 18, 5" FontSize="18" HorizontalTextAlignment="Start"  CharacterSpacing="1"
+                Text='      В этом приложении вы можете хранить Ваши записи о еде с указанием калорий. Добавляйте их при помощи кнопки со знаком плюс, редактируйте или удаляйте, нажава на запись.
+                   &#10;&#10;      Внизу вы увидете сумму потребленных калорий за день.
+                   &#10;&#10;      Вы можете посмотреть Ваши записи за прошлые дни, однако их редактирование и удаление будет невозможно.
+                   &#10;&#10;      На странице с таблицей калорий Вы можете просмотреть справочную информацию о продуктах.'/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Food_Diary.MainPage">
+
+    <StackLayout BackgroundColor="#D5D7CC">
+
+        <Button Text="Выйти из аккаунта" TextColor="#588982" Padding="15,0,15,0" HorizontalOptions="End" TextTransform="None"
+                BackgroundColor="#D5D7CC" HeightRequest="30" Clicked="SignOut_Clicked"/>
+
+        <!-- Date field -->
+        <Frame CornerRadius="5" HorizontalOptions="Center" WidthRequest="160" BackgroundColor="#B9D0CD">
+            <Label x:Name="datefield" Text="дата" TextColor="#588982" FontAttributes="Bold" HorizontalOptions="Center" FontSize="18"/>        <!-- Здесь дата -->
+        </Frame>
+        <Line HeightRequest="3" BackgroundColor="#FF9376" Margin="15,5,15,3"/>
+
+        <!-- Notes field -->
+        <CollectionView x:Name="collectionView"
+                        SelectionMode="Single"
+                        SelectionChanged="OnSelectionChanged"
+                        Margin="15,0,15,0">
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Vertical"
+                                   ItemSpacing="10"/>
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text ="{Binding Record}" TextColor="#588982" FontAttributes="Bold" FontSize="18" HorizontalOptions="StartAndExpand"/>
+                            <Label Text="{Binding Calories}" TextColor="#588982" FontAttributes="Bold" FontSize="18"/>
+                        </StackLayout>
+                        <Line HeightRequest="2" BackgroundColor="#FF9376" Margin="0"/>
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <!-- Buttons for adding note and going to reference and about page -->
+        <StackLayout VerticalOptions="End" Margin="15,0,15,8">
+            <StackLayout Orientation="Horizontal" HeightRequest="50">
+                
+                <Button Text="Полезности" FontAttributes="Italic, Bold" BackgroundColor="#D5D7CC" TextColor="#FF9376"
+                        Clicked="PoleznostiButton_Clicked" HorizontalOptions="StartAndExpand"
+                        FontSize="Medium"  Padding="0, 25, 0, 0" Margin="5,0,0,0" TextTransform="None" />
+                
+                <ImageButton Source="plus.png" x:Name="Plusik" Clicked="Plus_Clicked" Margin="0,0,13,0"
+                        BackgroundColor="#D5D7CC" Scale="0.9" HorizontalOptions="EndAndExpand"/>
+            </StackLayout>
+
+            <Line HeightRequest="3" BackgroundColor="#FF9376" Margin="0,0,0,5"/>
+
+            <!-- Buttons for navigation in dates and field with all callories -->
+            <StackLayout Orientation="Horizontal" HeightRequest="70">
+
+                <ImageButton Source="left_arrow.png" Clicked="LeftArrow_Clicked" HorizontalOptions="Start" 
+                             BackgroundColor="#D5D7CC" Scale="0.7"/>
+
+                <Frame CornerRadius="5" HorizontalOptions="CenterAndExpand" BackgroundColor="#B9D0CD">
+                    <StackLayout Padding="0,-8,0,0">
+                        <Label Text="Всего каллорий:" TextColor="#588982" Padding="0" FontAttributes="Bold" HorizontalOptions="Center"/>
+                        <Label x:Name="allCaloriesField" Text="6240" TextColor="#588982" FontAttributes="Bold" HorizontalOptions="Center"/>
+                    </StackLayout>
+                </Frame>
+
+                <ImageButton Source="right_arrow.png" Clicked="RightArrow_Clicked" BackgroundColor="#D5D7CC" 
+                             Scale="0.7" HorizontalOptions="End"/>
+            
+            </StackLayout>
+        </StackLayout>
+    </StackLayout>
+    
+
+</ContentPage>
